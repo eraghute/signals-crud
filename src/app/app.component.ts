@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { ChildComponent } from './child/child.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { ApiService } from './services/api.service';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CommonModule, ChildComponent, MatToolbarModule],
+  imports: [RouterOutlet, CommonModule, ChildComponent, MatToolbarModule, RouterLink, MatIconModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

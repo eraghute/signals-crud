@@ -1,4 +1,4 @@
-<h2>Edit Contact</h2>
+<h2>Add Contact</h2>
 <form class="container" #form="ngForm" (ngSubmit)="form.valid && saveContact()">
     <div class="fields">
         <mat-form-field appearance="fill">
@@ -22,4 +22,4 @@
 </form>
 @if(loading()) {
     <mat-progress-spinner mode="indeterminate" diameter="50"></mat-progress-spinner>
-}   
+}

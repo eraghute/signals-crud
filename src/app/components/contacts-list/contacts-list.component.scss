@@ -4,3 +4,9 @@
 .mat-mdc-list-item .mat-mdc-list-item-title {
   color: #333;
 }
+mat-progress-spinner {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

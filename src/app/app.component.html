@@ -1,3 +1,6 @@
-<mat-toolbar>My Contacts ({{totalContacts()}})</mat-toolbar>
-
+<mat-toolbar>My Contacts ({{totalContacts()}})
+<a mat-icon-button routerLink="/add">
+  <mat-icon>add_circle</mat-icon>
+</a>
+</mat-toolbar>
 <router-outlet></router-outlet>

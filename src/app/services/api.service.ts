@@ -140,8 +140,26 @@ export class ApiService {
   }
 
   async deleteContact(contactId: string): Promise<void> {
-    await new Promise(resolve => setTimeout(resolve, 500)); // Simulate a delay of 0.5 seconds
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate a delay of 1 second
     this.contacts.update(contacts => contacts.filter(contact => contact.id !== contactId));
   }
 
+  async addContact(contact: Contact): Promise<void> {
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate a delay of 1 second
+    this.contacts.update(contacts => [contact, ...contacts ]);
+  }
+
+  async getContactById(id: string): Promise<Contact> {
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate a delay of 1 second
+    const contact = this.contacts().find(contact => contact.id === id);
+    if (!contact) {
+      throw new Error('Contact not found');
+    }
+    return contact;
+  }
+
+  async updateContact(updatedContact: Contact): Promise<void> {
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate a delay of 1 second
+    this.contacts.update(contacts => contacts.map(contact => contact.id === updatedContact.id ? updatedContact : contact));
+  } 
 }
